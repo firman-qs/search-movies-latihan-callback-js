@@ -3,7 +3,7 @@ $('.row .col form button').on('click', function () {
     // $('.movie-container').html(''); //jquery selector
 
     $.ajax({
-        url: `http://www.omdbapi.com/?apikey=dca61bcc&s=${$('.input-keyword').val()}`,
+        url: `https://www.omdbapi.com/?apikey=dca61bcc&s=${$('.input-keyword').val()}`,
         // url: `database/${$('.input-keyword').val()}.json`, //jika batas pakai API habis (untuk tes)
         success: result => {
             const movies = result.Search;
@@ -13,7 +13,7 @@ $('.row .col form button').on('click', function () {
                 $('.movie-container').html(cards);
                 $('.modal-detail-button').on('click', function () {
                     $.ajax({
-                        url: `http://www.omdbapi.com/?apikey=dca61bcc&i=${$(this).data('imdbid')}`,
+                        url: `https://www.omdbapi.com/?apikey=dca61bcc&i=${$(this).data('imdbid')}`,
                         // url: `database/avengers2.json`, //jika batas pakai API habis (untuk tes)
                         success: result => {
                             $('.modal-title').html(result.Genre)
